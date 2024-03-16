@@ -52,6 +52,12 @@ body {
     font-weight: 900;
 }
 
+@media screen and (min-width: 481px) {
+    .hide-on-desktop {
+        display: none;
+    }
+}
+
 @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
@@ -71,3 +77,4 @@ body {
         background-position: right top;
     }
 }
+

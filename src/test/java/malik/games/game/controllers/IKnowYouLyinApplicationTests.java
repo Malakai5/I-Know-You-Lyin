@@ -1,4 +1,4 @@
-package malik.games.you_lyin;
+package malik.games.game.controllers;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

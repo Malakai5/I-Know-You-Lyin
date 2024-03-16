@@ -52,7 +52,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>malik.games.you_lyin.IKnowYouLyinApplication</mainClass>
+                            <mainClass>malik.games.game.controllers.IKnowYouLyinApplication</mainClass>
                         </manifest>
                         <manifestEntries>
                             <Multi-Release>true</Multi-Release>
