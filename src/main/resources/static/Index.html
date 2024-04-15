@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start Page</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="LocalStyleSheet.css" rel="stylesheet">
+    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="text-container">
+    <h2>I KNOW YOU FUCKIN LYIN</h2>
+</div>
+<div class="rules-container">
+    <!-- Circles which indicates the steps of the form: -->
+    <div style="text-align:center;margin-top:40px;">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+    </div>
+    <div class="rule tab">
+        <h2>Rules:</h2>
+        <h4>Here's the rules to this silly game.</h4>
+        <ul class="rules-list">
+            <li>Everybody playing will put in some broad categories
+                <p style="background-color: rebeccapurple">(Example. RnB singers, Candy Brands, war criminals)</p>
+            </li>
+            <li>On the selection page (that the creator of the room has access to) a category will be randomly chosen</li>
+        </ul>
+    </div>
+    <div class="rule tab">
+        <h2>Here's what you do next:</h2>
+        <ul class="rules-list">
+            <li>Who ever is going first says "I can name 1"</li>
+            <li>The next person would say "I can name 2"</li>
+            <li>And the next person will say "I can name 3"</li>
+            <li>And the next person says...I think you get it🥱</li>
+        </ul>
+    </div>
+    <div class="rule tab">
+        <h2>I KNOW YOU FUCKIN LYIN</h2>
+        <h4>Is what you yell if at any point if you think someone's lying</h4>
+        <ul class="rules-list">
+            <li>That person then has 30 seconds to name whatever number they ended up on</li>
+            <li style="background-color: rebeccapurple"> For example if they said "I can name 10" then they have to name 10 of the category</li>
+        </ul>
+    </div>
+    <div class="rule tab">
+        <h2>punishment time👹</h2>
+        <ul class="rules-list">
+            <li>If that person can't come up with some answers then that mfka better take a drink</li>
+            <li>If that person can then yo bitchass drinkin double🤡</li>
+        </ul>
+    </div>
+    <div class="rule tab">
+        <h3>Create a room or join an already existing room.</h3>
+        <button class="btn" onclick="createNewRoom()">Create a room</button>
+        <button class="btn">Join a room</button>
+    </div>
+    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+</div>
+</body>
+<script src="Index.js"></script>
+</html>
