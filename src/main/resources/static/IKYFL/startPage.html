@@ -4,10 +4,22 @@
     <meta charset="UTF-8">
     <title>Start Page</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link href="LocalStyleSheet.css" rel="stylesheet">
+    <link href="IKYFL.css" rel="stylesheet">
+    <link href="../animatedFont.css" rel="stylesheet">
+    <link href="../sharedSheet.css" rel="stylesheet">
     <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
 </head>
 <body>
+
+<header>
+    <nav>
+        <ul>
+            <li class="nav-item"><a href="../index.html">GameHub</a></li>
+            <li class="nav-item"><a onclick="createNewRoom()">Start a Room</a></li>
+            <li class="nav-item"><a onclick="joinRoom()">Join a Room</a></li>
+        </ul>
+    </nav>
+</header>
 
 <div class="text-container">
     <h2>I KNOW YOU FUCKIN LYIN</h2>
@@ -28,7 +40,9 @@
             <li>Everybody playing will put in some broad categories
                 <p style="background-color: rebeccapurple">(Example. RnB singers, Candy Brands, war criminals)</p>
             </li>
-            <li>On the selection page (that the creator of the room has access to) a category will be randomly chosen</li>
+            <li>On the selection page (that the creator of the room has access to) a category will be randomly chosen
+                <p style="background-color: aqua">To give access of this page to other people just simply copy the URL and send it them</p>
+            </li>
         </ul>
     </div>
     <div class="rule tab">
@@ -58,11 +72,11 @@
     <div class="rule tab">
         <h3>Create a room or join an already existing room.</h3>
         <button class="btn" onclick="createNewRoom()">Create a room</button>
-        <button class="btn">Join a room</button>
+        <button class="btn" onclick="joinRoom()">Join a room</button>
     </div>
     <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
     <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
 </div>
 </body>
-<script src="Index.js"></script>
+<script src="index.js"></script>
 </html>

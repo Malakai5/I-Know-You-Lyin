@@ -1,5 +1,22 @@
 let currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
+quickCheck()
+async function quickCheck(){
+    let raw = JSON.stringify({"RequestType": "check_rooms"});
+    let requestOptions = {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: raw,
+        redirect: 'follow'
+    };
+
+    fetch("https://vbqd7oew9b.execute-api.us-east-1.amazonaws.com/dev/", requestOptions)
+        .then(response => response.text())
+        .then(response => JSON.parse(response))
+}
 
 function fixStepIndicator(n) {
     // This function removes the "active" class of all steps...
@@ -91,9 +108,42 @@ function createNewRoom(){
             .then(json => {
                 console.log(json)
                 if (json.statusCode === 200){
-                    location.replace("http://localhost:63343/I-Know-You-Lyin/src/main/resources/static/GameRoom.html?" + roomID);
                     alert("Here's your room code: " + roomID)
+                    location.replace("https://afro-games/IKYFL/GameRoom.html?" + roomID);
                 }
             })
     }
 }
+
+function joinRoom(){
+    let roomCode = prompt("What's your room's Code?");
+
+    let raw = JSON.stringify({
+        "RequestType": "validate_room",
+        "room_code": roomCode})
+    let requestOptions = {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: raw,
+        redirect: 'follow'
+    }
+
+    fetch("https://vbqd7oew9b.execute-api.us-east-1.amazonaws.com/dev/", requestOptions)
+        .then(response => response.text())
+        .then(response => JSON.parse(response))
+        .then(json => {
+            console.log(json)
+            if (json.body === true){
+                alert("Have fun in your room!!")
+                location.replace("https://afro-games/IKYFL/SubmittingPage.html?" + roomCode);
+            }
+            else {
+                alert("That code: " + roomCode + " doesn't have a room.\n Either get the correct code from someone or create a brand new Room")
+            }
+        })
+
+}
+

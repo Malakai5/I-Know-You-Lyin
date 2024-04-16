@@ -1,5 +1,4 @@
-// let gameID = window.location.search.replace("?","")
-let gameID = "UPJT3H"
+let gameID = window.location.search.replace("?","")
 async function enterSubmission(data){
     let raw = JSON.stringify({
         "RequestType": "write_info",
@@ -37,3 +36,12 @@ async function enterSubmission(data){
 document.getElementById("submit").addEventListener("click",
     () =>
         enterSubmission((document.getElementById("submission").value.trim())))
+
+async function goToAdminRoom(){
+    let answer = confirm("This will make you a Game Master")
+    if (answer){
+        alert("Don't fuck shit up🧑‍⚖️")
+        location.replace("https://afro-games/IKYFL/GameRoom.html?" + gameID);
+    }
+
+}

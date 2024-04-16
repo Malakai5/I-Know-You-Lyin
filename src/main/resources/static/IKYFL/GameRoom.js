@@ -1,5 +1,4 @@
 let gameID = window.location.search.replace("?","")
-// let gameID = "UPJT3H"
 document.getElementById("access_code").innerText = gameID
 let s3RoomList = []
 let currentDisplay
@@ -65,7 +64,38 @@ async function getRoomList(){
         })}
 
 
-setInterval(getRoomList,10000)
+function joinRoom(){
+    let raw = JSON.stringify({
+        "RequestType": "validate_room",
+        "room_code": gameID})
+    let requestOptions = {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: raw,
+        redirect: 'follow'
+    }
+
+    fetch("https://vbqd7oew9b.execute-api.us-east-1.amazonaws.com/dev/", requestOptions)
+        .then(response => response.text())
+        .then(response => JSON.parse(response))
+        .then(json => {
+            console.log(json)
+            if (json.body === true){
+                alert("Have fun in your room!!")
+                location.replace("https://afro-games/IKYFL/SubmittingPage.html?" + gameID);
+            }
+            else {
+                alert("That code: " + gameID + " doesn't have a room.\n Either get the correct code from someone or create a brand new Room")
+            }
+        })
+
+}
+
+
+setInterval(getRoomList,7500)
 
 // async function updateRoomList(){
 //     let listString = s3RoomList.toString().replaceAll(",","\n")
